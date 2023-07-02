@@ -10,6 +10,7 @@ class Net(torch.nn.Module):
         self.encoder = encoder
         self.decoder = decoder
         self.renderer = renderer
+        self.tau = 0.05
         ##Next line compute the coordinates in the local frame (N_atoms,3)
         self.device = device
         self.latent_mean = torch.nn.Parameter(data=torch.randn((100000, self.latent_dim), device=device), requires_grad=True)
